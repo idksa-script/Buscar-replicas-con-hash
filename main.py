@@ -24,5 +24,13 @@ for item in directorio.rglob("*"):
         #print(f"Archivo: {item}")
         lista1.append(item)
         lista2.append(archivo_hash(item))
+
+for first in range(0, len(lista2)):
+    print(f"Buscando duplicados del archivo{lista1[first]}")
+    for second in lista2:
+        if lista2[first] == second:
+            print("similitudes")
+        else:
+            print("nada")
     
 
