@@ -25,12 +25,17 @@ for item in directorio.rglob("*"):
         lista1.append(item)
         lista2.append(archivo_hash(item))
 
-for first in range(0, len(lista2)):
-    print(f"Buscando duplicados del archivo{lista1[first]}")
-    for second in lista2:
-        if lista2[first] == second:
-            print("similitudes")
-        else:
-            print("nada")
+duplicados = set()
+
+for first in range(len(lista2)):
+    print(f"\nBuscando duplicados del archivo {lista1[first]}: \n")
+    for second in range(len(lista2)):
+        if first != second and lista2[first] == lista2[second]:
+            parOrdenado = tuple(sorted([lista1[first], lista1[second]]))
+            print(f"Duplicados: {parOrdenado[0]} y {parOrdenado[1]}")
+
+
+
+
     
 
